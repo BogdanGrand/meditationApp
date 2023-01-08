@@ -1,0 +1,138 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.container{
+    height: 100vh;
+    overflow: hidden;
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.vid{
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+}
+.time-select,
+.plyer-section{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+}
+.time-select button{
+    background: none;
+    padding: 15px;
+    border: 2px white solid;
+    border-radius: 2px;
+    color: white;
+    font-weight: 600;
+    transition: all .8s ease;
+    cursor: pointer;
+}
+
+.time-select button:hover{
+    background-color: white;
+    color: black;
+}
+
+.play-section{
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    align-items: center;
+    justify-content: space-around;
+    width: 80%;
+    position: relative;
+}
+
+.play-section svg{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    height: 50%;
+    transform: translate(-50%, -50%) rotate(-90deg);
+}
+
+.play-section img{
+    position: absolute;
+    cursor: pointer;
+    z-index: 100;
+    
+}
+.time{
+    position: absolute;
+    bottom: 10%;
+    color: white;
+    font-weight: 600;
+    font-size: 25px;
+
+}
+
+.plyer-section button{
+    border-radius: 50%;
+    padding: 30px;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+}
+
+.plyer-section button:nth-child(1){
+    background-color: rgba(2, 2, 249);
+    opacity: .5;
+    transition: all .8s ease;
+}
+
+.plyer-section button:nth-child(2){
+    background-color: rgba(239, 11, 49);
+    opacity: .7;
+    transition: all .8s ease;
+}
+.active{
+    opacity: 1 !important;
+}
+.plyer-section button:hover{
+    opacity: 1;
+}
+.plyer-section button img{
+    width: 80px;
+    height: 80px;
+}
+
+@media only screen and (max-width: 768px){
+
+    .play-section svg{
+        height: 25%;
+    }
+    .play-section img{
+        width: 30%;
+    }
+
+    .plyer-section button img{
+        width: 40px;
+        height: 40px;
+    }
+}
+
+@media only screen and (max-width: 480px){
+    .play-section svg{
+        height: 15%;
+    }
+    .play-section img{
+        width: 20%;
+    }
+    .plyer-section button img{
+        width: 30px;
+        height: 30px;
+    }
+}
